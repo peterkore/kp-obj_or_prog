@@ -18,3 +18,17 @@ class LegiTarsasag:
     @jaratok.setter
     def jaratok(self, uj_jarat):
         self._jaratok.append(uj_jarat)
+
+    def jegy_foglalasa_jaratszam_szerint(self, jaratszam):
+        for jarat in self._jaratok:
+            if jarat._jaratszam == jaratszam:
+                jarat.jegy_foglalas()
+
+    def jegy_lemondasa_jaratszam_szerint(self, jaratszam):
+        for jarat in self._jaratok:
+            if jarat._jaratszam == jaratszam:
+                jarat.jegy_foglalas()
+
+
+
+

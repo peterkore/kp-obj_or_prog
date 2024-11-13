@@ -35,7 +35,7 @@ class RepuloJegyFoglalasiRendszer:
 
             if menu == "1":
 
-                self._legiTarsasag.foglalasok()
+                self._legiTarsasag.foglalasok
                 self._legiTarsasag.jaratok
 
             elif menu == "2":
