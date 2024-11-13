@@ -40,10 +40,10 @@ class RepuloJegyFoglalasiRendszer:
 
             elif menu == "2":
                 jaratszam = input("Adja meg a járatszámot: ")
-                break
+                self._legiTarsasag.jegy_foglalasa_jaratszam_szerint(jaratszam)
             elif menu == "3":
                 jaratszam = input("Adja meg a járatszámot: ")
-                break
+                self._legiTarsasag.jegy_lemondasa_jaratszam_szerint(jaratszam)
             elif menu == "4":
                 break
 

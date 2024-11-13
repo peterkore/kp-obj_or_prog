@@ -21,6 +21,19 @@ class NemzetkoziJarat(Jarat):
     def jegyar(self):
         return self._jegyar
 
+    def jegy_foglalas(self):
+        if not self._foglalt_e:
+            self._foglalt_e = True
+
+        else:
+            print("Hiba a jegy foglalt!")
+
+    def jegy_foglalas_lemondasa(self):
+        if self._foglalt_e:
+            self._foglalt_e = False
+        else:
+            print("Hiba a jegy foglalt!")
+
 
 
 
