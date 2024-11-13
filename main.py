@@ -19,9 +19,9 @@ class RepuloJegyFoglalasiRendszer:
         self._legiTarsasag.foglalasok = JegyFoglalas(5, "2024-11-12 20:00", 3)
         self._legiTarsasag.foglalasok = JegyFoglalas(6, "2024-11-12 20:01", 3)
 
-        self._legiTarsasag.jaratok = BelfoldiJarat(3, "Debrecen", 55000)
-        self._legiTarsasag.jaratok = BelfoldiJarat(2, "Budapest", 35000)
-        self._legiTarsasag.jaratok = NemzetkoziJarat(1, "Miami USA", 400000)
+        self._legiTarsasag.jaratok = BelfoldiJarat(3, "Debrecen", "Budapest", 40, 55000)
+        self._legiTarsasag.jaratok = BelfoldiJarat(2, "Budapest", "Győr", 45, 35000)
+        self._legiTarsasag.jaratok = NemzetkoziJarat(1,"Budapeust", "Miami USA", 120, 400000)
 
 # felhasználói interfész
     def user_interact(self):
