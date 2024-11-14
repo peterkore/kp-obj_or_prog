@@ -24,6 +24,7 @@ class LegiTarsasag:
             if jarat._jaratszam == jaratszam:
                 jarat.jegy_foglalas()
 
+
     def jegy_lemondasa_jaratszam_szerint(self, jaratszam):
         for jarat in self._jaratok:
             if jarat._jaratszam == jaratszam:
