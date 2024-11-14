@@ -1,8 +1,8 @@
 from Jarat import Jarat
 
 class NemzetkoziJarat(Jarat):
-    def __init__(self, jaratszam, honnan, hova, helyek_db, jegyar):
-        super().__init__(jaratszam, honnan, hova, helyek_db, jegyar)
+    def __init__(self, jaratszam, indulas, celallomas, helyek_db, jegyar):
+        super().__init__(jaratszam, indulas, celallomas, helyek_db, jegyar)
         self._extrak = ["elsőbbségi beszállás", "1 kisméretű poggyász", "Gyors átjutás a biztonsági ellenőrzésen"]
 
     @property
@@ -10,12 +10,12 @@ class NemzetkoziJarat(Jarat):
         return self._jaratszam
 
     @property
-    def honnan(self):
-        return self._honnan
+    def indulas(self):
+        return self._indulas
 
     @property
-    def hova(self):
-        return self._hova
+    def celallomas(self):
+        return self._celallomas
 
     @property
     def helyek_db(self):
