@@ -3,7 +3,7 @@ class JegyFoglalas:
         self._jegy_id = jegy_id
         self._foglalas_idopontja = foglalas_idopontja
         self._jarat_szam = jarat_szam
-        self._foglalasok = []
+
 
 
     @property

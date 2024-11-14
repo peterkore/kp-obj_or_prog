@@ -2,6 +2,7 @@ class LegiTarsasag:
     def __init__(self, legitarsasag_neve):
         self._legitarsasag_neve = legitarsasag_neve
         self._jaratok = []
+        self._foglalasok = []
 
 
     @property
@@ -23,12 +24,28 @@ class LegiTarsasag:
         for jarat in self._jaratok:
             if jarat._jaratszam == jaratszam:
                 jarat.jegy_foglalas()
+                self.add_foglalas()
 
 
     def jegy_lemondasa_jaratszam_szerint(self, jaratszam):
         for jarat in self._jaratok:
             if jarat._jaratszam == jaratszam:
                 jarat.jegy_foglalas_lemondasa()
+
+    @property
+    def foglalasok(self):
+        #return self._foglalasok
+        for foglalas in self._foglalasok:
+            print(f" Járatszám: {foglalas._jaratszam} , Ár: {foglalas._jegyar} Célállomás: {foglalas._celallomas} ")
+
+    @foglalasok.setter
+    def add_foglalas(self, uj_foglalas):
+        self._foglalasok.append(uj_foglalas)
+
+    @property
+    def foglalasok_listazasa(self):
+        for foglalas in self._foglalasok:
+            print(f" Járatszám: {foglalas._jaratszam} , Ár: {foglalas._jegyar} Célállomás: {foglalas._celallomas} ")
 
 
 
