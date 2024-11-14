@@ -33,6 +33,7 @@ class NemzetkoziJarat(Jarat):
         if not self._foglalt_e:
             self._foglalt_e = True
 
+
         else:
             print("Hiba a jegy foglalt!")
 
