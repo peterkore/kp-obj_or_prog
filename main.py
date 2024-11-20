@@ -13,18 +13,18 @@ class RepuloJegyFoglalasiRendszer:
 
     def _init_data(self):
 
-        self._legiTarsasag.foglalasok = JegyFoglalas( "2024-11-10 10:00", 1)
-        self._legiTarsasag.foglalasok = JegyFoglalas( "2024-11-10 10:20", 1)
+        self._legiTarsasag.foglalasok = JegyFoglalas( "2024-11-10 10:00", "1")
+        self._legiTarsasag.foglalasok = JegyFoglalas( "2024-11-10 10:20", "1")
 
-        self._legiTarsasag.foglalasok = JegyFoglalas( "2024-11-11 11:00", 2)
-        self._legiTarsasag.foglalasok = JegyFoglalas("2024-11-11 11:20", 2)
+        self._legiTarsasag.foglalasok = JegyFoglalas( "2024-11-11 11:00", "2")
+        self._legiTarsasag.foglalasok = JegyFoglalas("2024-11-11 11:20", "2")
 
-        self._legiTarsasag.foglalasok = JegyFoglalas( "2024-11-12 20:00", 3)
-        self._legiTarsasag.foglalasok = JegyFoglalas("2024-11-12 20:10", 3)
+        self._legiTarsasag.foglalasok = JegyFoglalas( "2024-11-12 20:00", "3")
+        self._legiTarsasag.foglalasok = JegyFoglalas("2024-11-12 20:10", "3")
 
-        self._legiTarsasag.jaratok = BelfoldiJarat( 40,"Debrecen", "Budapest",  550, 1200)
-        self._legiTarsasag.jaratok = BelfoldiJarat( 45,"Budapest", "Győr",  35, 12000)
-        self._legiTarsasag.jaratok = NemzetkoziJarat(120,"Budapest", "Miami USA",  400, 12000)
+        self._legiTarsasag.jaratok = BelfoldiJarat( "1","Debrecen", "Budapest",  550, 1200)
+        self._legiTarsasag.jaratok = BelfoldiJarat( "2","Budapest", "Győr",  35, 12000)
+        self._legiTarsasag.jaratok = NemzetkoziJarat("3","Budapest", "Miami USA",  400, 12000)
 
 
 
@@ -49,8 +49,9 @@ class RepuloJegyFoglalasiRendszer:
                 jaratszam = input("Adja meg a járatszámot: ")
                 self._legiTarsasag.jegy_foglalasa_jaratszam_szerint(jaratszam)
             elif menu == "3":
+                idopont = "2024-11-11 11:00"
                 jaratszam = input("Adja meg a járatszámot: ")
-                self._legiTarsasag.jegy_lemondasa_jaratszam_szerint(jaratszam)
+                self._legiTarsasag.jegy_lemondasa_jaratszam_szerint(idopont, jaratszam)
             elif menu == "4":
                 break
 

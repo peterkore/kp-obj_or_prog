@@ -1,6 +1,6 @@
 class JegyFoglalas:
     def __init__(self, foglalas_idopontja, jaratszam):
-        self._foglalasok = []
+        #self._foglalasok = []
         self._foglalas_idopontja = foglalas_idopontja
         self._jaratszam = jaratszam
 

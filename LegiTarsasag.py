@@ -1,13 +1,21 @@
 from datetime import datetime
 
+from BelfoldiJarat import BelfoldiJarat
 from JegyFoglalas import JegyFoglalas
+from NemzetkoziJarat import NemzetkoziJarat
 
 
-class LegiTarsasag:
+class LegiTarsasag():
     def __init__(self, legitarsasag_neve):
         self._legitarsasag_neve = legitarsasag_neve
         self._jaratok = []
         self._foglalasok = []
+
+    @property
+    def indulas(self):
+        return self._indulas
+
+
 
 
     @property
@@ -27,8 +35,10 @@ class LegiTarsasag:
 
     def jegy_foglalasa_jaratszam_szerint(self, jaratszam):
         for jarat in self._jaratok:
-            if 12 == 12:
-                lefoglal = JegyFoglalas(self, datetime.now(), jaratszam)
+            if jarat._jaratszam == jaratszam:
+                #print(lefoglal._foglalas_idopontja)
+                lefoglal = JegyFoglalas(datetime.now(), jaratszam)
+                print(lefoglal._foglalas_idopontja)
                 #return print(f" {lefoglal._jaratszam}")
                 self._foglalasok.append(lefoglal)
             else:
@@ -36,11 +46,15 @@ class LegiTarsasag:
 
 
 
-
-    def jegy_lemondasa_jaratszam_szerint(self, jaratszam):
+    idopont = "2024-11-11 11:00"
+    def jegy_lemondasa_jaratszam_szerint(self, idopont, jaratszam):
         for jarat in self._jaratok:
             if jarat._jaratszam == jaratszam:
-                jarat.jegy_foglalas_lemondasa()
+                lemond = JegyFoglalas(idopont, jaratszam)
+                print(lemond._foglalas_idopontja)
+                self._foglalasok.remove(lemond)
+            else:
+                print("hiba az időpont vagy járatszám körül")
 
     @property
     def foglalasok(self):
