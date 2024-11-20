@@ -7,7 +7,7 @@ class Jarat(ABC):
         self._celallomas = celallomas
         self._helyek_db = helyek_db # max helyek száma ebből számolom az elerheto helyeket foglalasnal
         self._jegyar = jegyar
-        self._foglalt_e = False
+
 
     @abstractmethod
     def jegy_foglalas(self):

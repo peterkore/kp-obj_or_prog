@@ -1,16 +1,8 @@
 class JegyFoglalas:
-    def __init__(self, jegy_id, foglalas_idopontja, jaratszam):
+    def __init__(self, foglalas_idopontja, jaratszam):
         self._foglalasok = []
-        self._jegy_id = jegy_id
         self._foglalas_idopontja = foglalas_idopontja
         self._jaratszam = jaratszam
-
-
-
-    @property
-
-    def jegy_id(self):
-        return self._jegy_id
 
     @property
     def foglalas_idopontja(self):
