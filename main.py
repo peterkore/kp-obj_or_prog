@@ -8,6 +8,7 @@ class RepuloJegyFoglalasiRendszer:
         self._legiTarsasag = LegiTarsasag("British Airways")
         self._init_data()
 
+
     def _init_data(self):
 
         self._legiTarsasag.foglalasok = JegyFoglalas(1, "2024-11-10 10:00", 1)
@@ -21,12 +22,14 @@ class RepuloJegyFoglalasiRendszer:
 
         self._legiTarsasag.jaratok = BelfoldiJarat(3, "Debrecen", "Budapest", 40, 55000)
         self._legiTarsasag.jaratok = BelfoldiJarat(2, "Budapest", "Győr", 45, 35000)
-        self._legiTarsasag.jaratok = NemzetkoziJarat(1,"Budapeust", "Miami USA", 120, 400000)
+        self._legiTarsasag.jaratok = NemzetkoziJarat(1,"Budapest", "Miami USA", 120, 400000)
+
+
 
 # felhasználói interfész
     def user_interact(self):
         while True:
-            print("1. Foglalások listázása")
+            print("1. Foglalások és Járatok listázása")
             print("2. Jegy foglalása")
             print("3. Foglalás lemondása")
             print("4. Kilépés")
@@ -34,8 +37,9 @@ class RepuloJegyFoglalasiRendszer:
             menu = input("Válassz a fenti menüpontokból: ")
 
             if menu == "1":
-
+                print("Foglalások")
                 self._legiTarsasag.foglalasok
+                print("Járatok")
                 self._legiTarsasag.jaratok
 
             elif menu == "2":
@@ -46,6 +50,7 @@ class RepuloJegyFoglalasiRendszer:
                 self._legiTarsasag.jegy_lemondasa_jaratszam_szerint(jaratszam)
             elif menu == "4":
                 break
+
 
 
 repulojegy_foglalasi_rendszer = RepuloJegyFoglalasiRendszer()

@@ -23,8 +23,8 @@ class LegiTarsasag:
     def jegy_foglalasa_jaratszam_szerint(self, jaratszam):
         for jarat in self._jaratok:
             if jarat._jaratszam == jaratszam:
-                jarat.jegy_foglalas()
-                self.add_foglalas()
+                #jarat.jegy_foglalas()
+                self._foglalasok()
 
 
     def jegy_lemondasa_jaratszam_szerint(self, jaratszam):
@@ -36,16 +36,16 @@ class LegiTarsasag:
     def foglalasok(self):
         #return self._foglalasok
         for foglalas in self._foglalasok:
-            print(f" Járatszám: {foglalas._jaratszam} , Ár: {foglalas._jegyar} Célállomás: {foglalas._celallomas} ")
+            print(f" Járatszám: {foglalas._jaratszam} ,  jegy szám: {foglalas._jegy_id} ")
 
     @foglalasok.setter
-    def add_foglalas(self, uj_foglalas):
+    def foglalasok(self, uj_foglalas):
         self._foglalasok.append(uj_foglalas)
 
     @property
     def foglalasok_listazasa(self):
         for foglalas in self._foglalasok:
-            print(f" Járatszám: {foglalas._jaratszam} , Ár: {foglalas._jegyar} Célállomás: {foglalas._celallomas} ")
+            print(f" Járatszám: {foglalas._jaratszam} , : jegy szám: {foglalas._jegy_id} ")
 
 
 
