@@ -1,5 +1,6 @@
+import datetime
 from datetime import datetime
-
+from time import time
 from BelfoldiJarat import BelfoldiJarat
 from JegyFoglalas import JegyFoglalas
 from NemzetkoziJarat import NemzetkoziJarat
@@ -33,34 +34,17 @@ class LegiTarsasag():
     def jaratok(self, uj_jarat):
         self._jaratok.append(uj_jarat)
 
-    def jegy_foglalasa_jaratszam_szerint(self, jaratszam):
-        for jarat in self._jaratok:
-            if jarat._jaratszam == jaratszam:
-                #print(lefoglal._foglalas_idopontja)
-                lefoglal = JegyFoglalas(datetime.now(), jaratszam)
-                print(lefoglal._foglalas_idopontja)
-                #return print(f" {lefoglal._jaratszam}")
-                self._foglalasok.append(lefoglal)
-            else:
-                print("Hiba a járatszám vagy a helyek darabszámát illetően")
 
 
 
-    idopont = "2024-11-11 11:00"
-    def jegy_lemondasa_jaratszam_szerint(self, idopont, jaratszam):
-        for jarat in self._jaratok:
-            if jarat._jaratszam == jaratszam:
-                lemond = JegyFoglalas(idopont, jaratszam)
-                print(lemond._foglalas_idopontja)
-                self._foglalasok.remove(lemond)
-            else:
-                print("hiba az időpont vagy járatszám körül")
+
+
 
     @property
     def foglalasok(self):
         #return self._foglalasok
         for foglalas in self._foglalasok:
-            print(f" Járatszám: {foglalas._jaratszam} ,  idő: {foglalas._foglalas_idopontja}")
+            print(f" Jegy id:{foglalas._jegy_id} Járatszám: {foglalas._jaratszam} ,  idő: {foglalas._foglalas_ideje} foglalt_e {foglalas.foglalt_e}")
 
     @foglalasok.setter
     def foglalasok(self, uj_foglalas):
@@ -69,7 +53,51 @@ class LegiTarsasag():
     @property
     def foglalasok_listazasa(self):
         for foglalas in self._foglalasok:
-            print(f" Járatszám: {foglalas._jaratszam} , jegyszám: ")
+            print(f" Járatszám: {foglalas._jaratszam} , ")
+
+    def jegy_foglalas(self):
+        if not self.foglalt_e:
+            self._foglalt_e = True
+        else:
+            print("hiba a jegy már foglalt")
+
+    def jegy_lemondas(self):
+        if self.foglalt_e:
+            self._foglalt_e = False
+        else:
+            print("hiba a jegy már szabad")
+
+    def jegy_foglalasa_jegy_id_szerint(self, jegy_id):
+        for foglalas in self._foglalasok:
+            if foglalas.jegy_id == jegy_id:
+                foglalas.jegy_foglalas()
+
+
+    def jegy_lemondasa_jegy_id_szerint(self, jegy_id):
+
+        for foglalas in self._foglalasok:
+            if foglalas.jegy_id == jegy_id:
+                foglalas.jegy_lemondas()
+
+    def idopont_megfelelo(self, foglalas_ideje):
+        ido = foglalas_ideje
+        teszt = '2020-10-10'
+        #teszt0 = '2020-10-11'
+        date_now = datetime.now()
+        #date_str = date0.strftime("%Y-%m-%d")
+        #print(date_str)
+        date_szam = datetime.strptime(ido,"%Y-%m-%d")
+        #print(date_szam)
+        if(date_now > date_szam):
+            print("Hiba a ez a járat már nem foglalható")
+            return False
+
+
+
+
+
+
+
 
 
 

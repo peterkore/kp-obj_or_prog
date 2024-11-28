@@ -9,6 +9,7 @@ class Jarat(ABC):
         self._jegyar = jegyar
 
 
+
     @abstractmethod
     def jegy_foglalas(self):
         pass

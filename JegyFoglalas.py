@@ -1,31 +1,47 @@
 class JegyFoglalas:
-    def __init__(self, foglalas_idopontja, jaratszam):
+    def __init__(self, jaratszam, jegy_id, foglalas_ideje, foglalt_e):
         #self._foglalasok = []
-        self._foglalas_idopontja = foglalas_idopontja
+      #  self._nev = nev
         self._jaratszam = jaratszam
+        self._jegy_id = jegy_id
+        self._foglalas_ideje = foglalas_ideje
+        self._foglalt_e = foglalt_e
 
     @property
-    def foglalas_idopontja(self):
-        return self._foglalas_idopontja
+    def foglalas_ideje(self):
+        return self._foglalas_ideje
 
     @property
-    def jarat_szam(self):
+    def jaratszam(self):
         return self._jaratszam
 
+    @property
+    def jegy_id(self):
+        return self._jegy_id
+
+    @property
+    def foglalt_e(self):
+        return self._foglalt_e
+
+    def jegy_foglalas(self):
+        if not self.foglalt_e:
+            self._foglalt_e = True
+        else:
+            print("hiba a jegy már foglalt")
+
+    def jegy_lemondas(self):
+        if self.foglalt_e:
+            self._foglalt_e = False
+        else:
+            print("hiba a jegy már szabad")
 
 
-   # @property
-   # def foglalasok(self):
-    #    return self._foglalasok
-        #for foglalas in self._foglalasok:
-         #   print(f" Járatszám: {foglalas._jaratszam}  ")
 
-    #@foglalasok.setter
-    #def foglalasok(self, foglalas):
-    #    self._foglalasok.append(foglalas)
+  #  @property
+  #  def nev(self):
+  #      return self._nev
 
-    #@property
-    #def foglalasok_listazasa(self):
-    #    for foglalas in self._foglalasok:
-    #        print(f" Járatszám: {foglalas._jaratszam}  ")
+
+
+
 
