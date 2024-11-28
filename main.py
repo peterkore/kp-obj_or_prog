@@ -1,9 +1,12 @@
 from datetime import datetime
 from time import time
+from dateutil.parser import parse
+
 from JegyFoglalas import JegyFoglalas
 from BelfoldiJarat import BelfoldiJarat
 from NemzetkoziJarat import NemzetkoziJarat
 from LegiTarsasag import LegiTarsasag
+
 
 class RepuloJegyFoglalasiRendszer:
     def __init__(self):
@@ -13,16 +16,16 @@ class RepuloJegyFoglalasiRendszer:
 
     def _init_data(self):
 
-        self._legiTarsasag.foglalasok = JegyFoglalas( "1","121",  "2024-10-21", True)
-        self._legiTarsasag.foglalasok = JegyFoglalas( "1","122", "2024-10-22", False)
+        self._legiTarsasag.foglalasok = JegyFoglalas( "1","121",  "2024-12-21", True)
+        self._legiTarsasag.foglalasok = JegyFoglalas( "1","122", "2024-12-22", False)
 
 
-        self._legiTarsasag.foglalasok = JegyFoglalas( "2", "133", "2024-10-22", True)
-        self._legiTarsasag.foglalasok = JegyFoglalas("2", "125","2024-10-22", False)
+        self._legiTarsasag.foglalasok = JegyFoglalas( "2", "133", "2024-12-22", True)
+        self._legiTarsasag.foglalasok = JegyFoglalas("2", "125","2024-11-22", False)
 
 
-        self._legiTarsasag.foglalasok = JegyFoglalas( "3", "136",  "2024-10-22", True)
-        self._legiTarsasag.foglalasok = JegyFoglalas("3", "137", "2024-10-22", False)
+        self._legiTarsasag.foglalasok = JegyFoglalas( "3", "136",  "2024-12-22", True)
+        self._legiTarsasag.foglalasok = JegyFoglalas("3", "137", "2025-10-22", False)
 
 
         self._legiTarsasag.jaratok = BelfoldiJarat( "1","Debrecen", "Budapest",  550, 1200)
@@ -55,12 +58,12 @@ class RepuloJegyFoglalasiRendszer:
                 print("******************Járatok********************")
                 self._legiTarsasag.jaratok
             elif menu == "3":
-                foglalas_ideje = input("Adja meg a járat időpontját: ")
+                foglalas_ideje = input("Adja meg a járat időpontját: ev-honap-nap, 2022-01-01 ")
                 if(self._legiTarsasag.idopont_megfelelo(foglalas_ideje)):
                  jegy_id = input("Adja meg a jegy_id-t: ")
                  self._legiTarsasag.jegy_foglalasa_jegy_id_szerint(jegy_id)
             elif menu == "4":
-                foglalas_ideje = input("Adja meg a foglalás idejét: ev-honap-nap, 2022-01-01 ")
+                foglalas_ideje = input("Adja meg a járat időpontját: ev-honap-nap, 2022-01-01 ")
                 if(self._legiTarsasag.idopont_megfelelo(foglalas_ideje)):
                     jegy_id = input("Adja meg a járatszámot: ")
                     self._legiTarsasag.jegy_lemondasa_jegy_id_szerint(jegy_id)
